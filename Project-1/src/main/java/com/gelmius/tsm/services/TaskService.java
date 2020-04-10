@@ -92,4 +92,12 @@ public class TaskService {
 		return true;
 	}
 	
+	public void makeFinish(String taskId) {
+		for (Task task: tasks) {
+			if(task.getId().equals(taskId)) {
+				task.setFinished(true);
+			}
+		}
+	}
+	
 }

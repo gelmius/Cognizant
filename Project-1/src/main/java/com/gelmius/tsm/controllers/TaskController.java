@@ -55,6 +55,12 @@ public class TaskController {
 		taskService.updateTask(task, id);	
 	}
 	
+	@PutMapping("/tasks/markfinish/{id}")
+	public void markFinishTask(@PathVariable String id) {
+		taskService.makeFinish(id);	
+	}
+	
+	
 	@PutMapping("/tasks/{id}/{id1}")
 	public void updateSubTask(@PathVariable String id, @PathVariable String id1,  @RequestBody Task task) {
 		taskService.updateSubTask(task, id, id1);
